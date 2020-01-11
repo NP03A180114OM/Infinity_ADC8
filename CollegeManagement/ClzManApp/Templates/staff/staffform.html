@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Form </title>
+</head>
+<body>
+    <form method="POST" action="save">
+        {% csrf_token %}
+        Enter staff id: <input name="staff_TeacherID" type="text" > <br>
+        Enter staff name: <input name="staff_TeacherName" type="text" > <br>
+        Enter email: <input name="staff_email" type="text" > <br>
+        Enter department: <input name="staff_department" type="text" > <br>
+        <input type="submit">
+        <td><a href="/delete/{{TeacherID}}" class="btn btn-danger">Delete</a><br></td>
+    </form>
+
+</body>
+</html>

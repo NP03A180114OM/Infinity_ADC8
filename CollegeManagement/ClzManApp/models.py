@@ -7,11 +7,16 @@ class Students(models.Model):
     StudentName=models.CharField(max_length=255)
     email=models.CharField(max_length=255)
     standard=models.CharField(max_length=255)
-    profile_image=models.FileField()
+
+    def __str__(self):
+        return  str(self.id) + " " + self.StudentID + " " + self.StudentName + " " + self.email + " " + self.standard
 
 
 class Teachers(models.Model):
     TeacherID=models.CharField(max_length=255)
-    TeacehrName=models.CharField(max_length=255)
+    TeacherName=models.CharField(max_length=255)
     email=models.CharField(max_length=255)
     department=models.CharField(max_length=255)
+
+    def __str__(self):
+        return  str(self.id) + " " + self.TeacherID + " " + self.TeacherName + " " + self.email + " " + self.department

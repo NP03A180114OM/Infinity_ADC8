@@ -14,16 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from ClzManApp import views
-from CollegeManagement import settings
-
-
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('addData',views.addData,name="add_data"),
-    path('add_student',views.add_student,name="add_student"),
-    path('add_teacher', views.add_teacher, name="add_teacher"),
-]
+    path('ClzManApp/',include('ClzManApp.urls')),
+   ]
 

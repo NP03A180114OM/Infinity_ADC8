@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Form </title>
+</head>
+<body>
+    <form method="POST" action="update/{{student.id}}">
+        {% csrf_token %}
+        Update Staffid: <input name="staff_TeacherID" type="text" value ={{staff.TeacherID}}> <br>
+        Update StaffName: <input name="staff_TeacherName" type="text" value={{staff.TeacherName}}> <br>
+        Update email: <input name="staff_email" type="email" value={{student.email}}> <br>
+        Update department: <input name="staff_department" type="text" value={{staff.department}}> <br>
+        <input type="submit">
+    </form>
+
+</body>
+</html>

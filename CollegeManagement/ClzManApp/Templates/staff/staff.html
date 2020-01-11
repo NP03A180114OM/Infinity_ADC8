@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List of staff</title>
+</head>
+<body>
+    <h1> List of staff</h1>
+    {% for staff in staff %}
+    staff id : {{staff.TeacherID}} <br>
+    staff name : {{staff.TeacherName}} <br>
+    staff email : {{staff.email}}<br>
+    department : {{staff.department}}<br>
+    <a href="edit/{{staff.TeacherID}}">Edit this</a> <br>
+    <a href="delete/{{staff.TeacherID}}">delete this</a> <br>
+    ======================================== <br>
+    {% empty %}
+        There are no staff availble.
+    {% endfor %}
+</body>
+</html>
