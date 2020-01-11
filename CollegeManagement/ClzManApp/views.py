@@ -36,28 +36,6 @@ def view_studentdata_save(request):
     else:
         return HttpResponse("Error record saving")
 
-def view_studentdata_updateform(request,Student_ID):
-    print(Student_ID)
-    student_obj = Students.objects.get(id=Student_ID)
-    print(student_obj)
-    context_varible = {
-        'student':student_obj
-    }
-    return render(request,'student/studentupdateform.html',context_varible)
-
-def view_update_form_data_in_db(request,Student_ID):
-    student_obj = Students.objects.get(id=Student_ID)
-    print(student_obj)
-    student_form_data = request.POST
-    print(student_form_data)
-    student_obj.StudentID = request.POST['student_StudentID']
-    student_obj.StudentName =request.POST['student_StudentName']
-    student_obj.email = request.POST['student_email']
-    student_obj.standard = request.POST['student_standard']
-    student_obj.save()
-
-    return HttpResponse("Record Updated!!")
-
 
 #this views for staff
 def view_staffs_page(request):
@@ -89,28 +67,6 @@ def view_staffdata_save(request):
         return HttpResponse("Record Saved")
     else:
         return HttpResponse("Error record saving")
-
-def view_staffdata_updateform(request,Teacher_ID):
-    print(Teacher_ID)
-    staff_obj = Teachers.objects.get(id=Teacher_ID)
-    print(staff_obj)
-    context_varible = {
-        'staff':staff_obj
-    }
-    return render(request,'staff/staffupdateform.html',context_varible)
-
-def view_update_form_data_in_db(request,Teacher_ID):
-    staff_obj = Teachers.objects.get(id=Teacher_ID)
-    print(staff_obj)
-    student_form_data = request.POST
-    print(student_form_data)
-    staff_obj.TeacherID = request.POST['staff_TeacherID']
-    staff_obj.StaffName =request.POST['staff_TeacherName']
-    staff_obj.email = request.POST['staff_email']
-    staff_obj.department = request.POST['staff_department']
-    staff_obj.save()
-
-    return HttpResponse("Record Updated!!")
     
 
 def view_staff_delete(request,ID):  
