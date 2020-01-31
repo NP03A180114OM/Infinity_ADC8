@@ -1,14 +1,23 @@
 
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 
 
-def upload(request):
-    if request.method == 'POST':
-        uploaded_file = request.FILES['doc']
-        file_object = FileSystemStorage()
-        file_object.save(uploaded_file.name, uploaded_file)
-    return render(request,'home.html')
+def index(request):
+    from .models import User
+    users = User.objects.all()
+    p = users[len(users)-1].pic
+    print(p.url)
+    return render(request, 'index.html' , {'users': users})
+
+
+
+def uploadImage(request):
+    print("Request Handling...")
+    p = request.FILES['image']
+    from .models import User
+
+    user = User(pic =p)
+    user.save()
+    return render(request, 'index.html')

@@ -115,12 +115,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_ROOT = 'C:\\Herald\\Second Year\\Third Semester\\Object Oriented Design and Programming\\GitHub\\Continuous assesment-II\\Infinity_ADC8\\CollegeManagement\\media' 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+MEDIA_URL = 'media/'
 
 STATIC_URL = '/static/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-MEDIA_URL = '/media/'
